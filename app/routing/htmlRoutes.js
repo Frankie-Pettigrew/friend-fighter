@@ -1,8 +1,15 @@
+$.getScript(__dirname + "server.js")
+  .done(function (script) {
+      HelloWorld();
+  })
+  .fail(function (jqxhr, settings, exception) {
+      console.log('something went wrong!');
+  });
 
-app.get("/",function(req,res){
-    res.sendFile(path.join("app/public/", "home.html"));
-});
+$("#survey").click(function () {
+    server.getSurvey();
+})
 
-app.get("/survey",function(req,res){
-    res.sendFile(path.join("app/public/", "survey.html"));
+$("#home").click(function () {
+    server.getSlash();
 })
