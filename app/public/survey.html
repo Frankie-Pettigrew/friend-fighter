@@ -14,7 +14,9 @@
 <body>
     <div class="container">
         <h2>Survey</h2>
+        <h3>Name</h3>
         <input type="text" id="name" class="form-control" required="">
+        <h3>Photo URL</h3>
         <input type="text" id="photo" class="form-control" required="">
 
         <h3>Question 1</h3>
@@ -48,7 +50,7 @@
         </select>
 
         <h3>Question 4</h3>
-        <h4>Are you a cat person?</h4>
+        <h4>Science Fiction?</h4>
         <select class="chosen" id="4">
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -58,7 +60,7 @@
         </select>
 
         <h3>Question 5</h3>
-        <h4>Are you a dog person?</h4>
+        <h4>Fantasy?</h4>
         <select class="chosen" id="5">
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -68,7 +70,7 @@
         </select>
 
         <h3>Question 6</h3>
-        <h4>Are you a cat person?</h4>
+        <h4>Are hot dogs sandwiches?</h4>
         <select class="chosen" id="6">
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -78,7 +80,7 @@
         </select>
 
         <h3>Question 7</h3>
-        <h4>Do you enjoy electronic music?</h4>
+        <h4>Morning person?</h4>
         <select class="chosen" id="7">
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -88,7 +90,7 @@
         </select>
 
         <h3>Question 8</h3>
-        <h4>Are you a cat person?</h4>
+        <h4>Night owl?</h4>
         <select class="chosen" id="8">
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -98,7 +100,7 @@
         </select>
 
         <h3>Question 9</h3>
-        <h4>Do you enjoy electronic music?</h4>
+        <h4>Do you enjoy taking risks?</h4>
         <select class="chosen" id="9">
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -108,7 +110,7 @@
         </select>
 
         <h3>Question 10</h3>
-        <h4>Are you a cat person?</h4>
+        <h4>Do you want stability?</h4>
         <select class="chosen" id="10">
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -119,6 +121,30 @@
 
         <button type="submit" class="btn btn-lg" id="submit">Submit</button>
     </div>
+    <script type="text/javascript">
+    $("#submit").on("click",function(event){
+        event.preventDefault();
+
+
+        var data = {
+            name: $("#name").val(),
+            photo: $("#photo").val(),
+            q1: $("#1").val(),
+            q2: $("#2").val(),
+            q3: $("#3").val(),
+            q4: $("#4").val(),
+            q5: $("#5").val(),
+            q6: $("#6").val(),
+            q7: $("#7").val(),
+            q8: $("#8").val(),
+            q9: $("#9").val(),
+            q10: $("#10").val()
+        }
+        console.log(data);
+
+
+    })
+    </script>
 </body>
 
 </html>

@@ -1,15 +1,13 @@
-$.getScript(__dirname + "server.js")
-  .done(function (script) {
-      HelloWorld();
-  })
-  .fail(function (jqxhr, settings, exception) {
-      console.log('something went wrong!');
-  });
+var path = require("path");
 
-$("#survey").click(function () {
-    server.getSurvey();
-})
+module.exports = function (app) {
 
-$("#home").click(function () {
-    server.getSlash();
-})
+    app.get("/", function (req, res) {
+        res.sendFile(path.join(__dirname, "/../public/home.html"));
+    });
+    app.get("/survey", function (req, res) {
+        res.sendFile(path.join(__dirname, "/../public/survey.html"));
+    });
+
+}
+
